@@ -34,10 +34,18 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
 
+
 builder.Services.AddAuthentication().AddFacebook(option =>
 {
     option.AppId = "1018861963327484";
     option.AppSecret = "d8f4064d5ec6d8125788fcb8bd8a3774";
+});
+
+
+builder.Services.AddAuthentication().AddMicrosoftAccount(option =>
+{
+    option.ClientId = "66f5becd-729d-4800-9733-fa582a6543bd";
+    option.ClientSecret = "hRg8Q~CqIiEfm~obTIM5eAGAgv1pgKX4CHYEIdvW";
 });
 
 // This is how we add a session.
